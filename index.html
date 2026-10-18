@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домовой — Строительство домов в Воронеже</title>
+    <meta name="description" content="Строительство домов под ключ из кирпича, газоблока и бруса. Фиксированная цена, сдача в срок, гарантия 5 лет.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============ ШАПКА ============ -->
+<header class="header">
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="Домовой" class="logo-img">
+        </a>
+
+        <nav class="nav">
+            <a href="#quiz" class="nav-link">Подарок</a>
+            <a href="#about" class="nav-link">О нас</a>
+            <a href="#process" class="nav-link">Этапы</a>
+            <a href="#projects" class="nav-link">Проекты</a>
+            <a href="#reviews" class="nav-link">Отзывы</a>
+            <a href="#contacts" class="nav-link">Контакты</a>
+        </nav>
+
+        <div class="header-right">
+            <a href="tel:+79204208262" class="header-phone">+7 (920) 420-82-62</a>
+            <button class="btn-order open-modal">Заказать звонок</button>
+            <button class="burger" id="burger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#quiz" class="nav-link">Подарок</a>
+        <a href="#about" class="nav-link">О нас</a>
+        <a href="#process" class="nav-link">Этапы</a>
+        <a href="#projects" class="nav-link">Проекты</a>
+        <a href="#reviews" class="nav-link">Отзывы</a>
+        <a href="#contacts" class="nav-link">Контакты</a>
+        <a href="tel:+79204208262" class="mobile-phone">+7 (920) 420-82-62</a>
+        <button class="btn-order open-modal" style="margin: 20px; width: calc(100% - 40px);">Заказать звонок</button>
+    </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+    <div class="hero-bg" style="background-image: url('images/hero-house.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content-wrapper">
+        <div class="hero-left">
+            <img src="images/logo.png" alt="Домовой" class="hero-big-logo">
+        </div>
+        <div class="hero-right">
+            <div class="hero-form-card">
+                <h3>Заказать звонок</h3>
+                <p>Оставьте заявку, и мы перезвоним вам в течение 15 минут.</p>
+                <form action="#" class="hero-form">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="tel" placeholder="Ваш телефон" required>
+                    <button type="submit" class="btn-submit-hero">Заказать звонок</button>
+                    <label class="checkbox-label">
+                        <input type="checkbox" required checked>
+                        <span>Я даю согласие на обработку персональных данных</span>
+                    </label>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ ОПРОСНИК ============ -->
+<section class="quiz-section" id="quiz" style="background-image: url('images/quiz-bg.jpg');">
+    <div class="quiz-overlay"></div>
+    <div class="container quiz-container">
+        <div class="quiz-info">
+            <h2 class="quiz-main-title">Пройдите опрос<br>и получите смету<br><span>бесплатно</span></h2>
+            <p class="quiz-subtitle">Ответьте на 8 простых вопросов, и мы подготовим для вас индивидуальный расчет стоимости строительства.</p>
+        </div>
+        
+        <div class="quiz-wrapper-steps">
+            <div class="quiz-progress-bar-container">
+                <div class="quiz-progress-bar-fill" id="quizProgressBar"></div>
+            </div>
+            <span class="quiz-step-counter" id="quizStepCounter">Вопрос 1 из 8</span>
+
+            <form id="quizForm" class="quiz-form-steps">
+                <div class="quiz-step active" data-step="1">
+                    <h3 class="quiz-question">Какой дом вы хотите построить?</h3>
+                    <div class="quiz-options-row">
+                        <label class="quiz-radio-box"><input type="radio" name="q1" value="one_floor"><span>Одноэтажный</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q1" value="two_floor"><span>Двухэтажный</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q1" value="with_garage"><span>С гаражом</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q1" value="complex"><span>Сложной архитектуры</span></label>
+                    </div>
+                </div>
+                <div class="quiz-step" data-step="2">
+                    <h3 class="quiz-question">Из какого материала планируете строиться?</h3>
+                    <div class="quiz-options-row">
+                        <label class="quiz-radio-box"><input type="radio" name="q2" value="brick"><span>Кирпич</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q2" value="gas_block"><span>Газоблок</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q2" value="timber"><span>Брус / Дерево</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q2" value="frame"><span>Каркас</span></label>
+                    </div>
+                </div>
+                <div class="quiz-step" data-step="3">
+                    <h3 class="quiz-question">На какую площадь планируете строительство?</h3>
+                    <div class="quiz-options-row">
+                        <label class="quiz-radio-box"><input type="radio" name="q3" value="up_to_100"><span>До 100 м²</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q3" value="100_150"><span>100 – 150 м²</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q3" value="150_200"><span>150 – 200 м²</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q3" value="over_200"><span>Более 200 м²</span></label>
+                    </div>
+                </div>
+                <div class="quiz-step" data-step="4">
+                    <h3 class="quiz-question">Есть ли у вас участок под строительство дома?</h3>
+                    <div class="quiz-options-row">
+                        <label class="quiz-radio-box"><input type="radio" name="q4" value="yes"><span>Да, есть</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q4" value="no"><span>Нет, но в поиске</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q4" value="need_help"><span>Нужна помощь с выбором</span></label>
+                    </div>
+                </div>
+                <div class="quiz-step" data-step="5">
+                    <h3 class="quiz-question">Есть ли проект для строительства или эскиз?</h3>
+                    <div class="quiz-options-row">
+                        <label class="quiz-radio-box"><input type="radio" name="q5" value="yes"><span>Да, есть готовый</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q5" value="sketch"><span>Есть только эскиз</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q5" value="no"><span>Нет, нужен проект</span></label>
+                    </div>
+                </div>
+                <div class="quiz-step" data-step="6">
+                    <h3 class="quiz-question">Какую комплектацию хотите?</h3>
+                    <div class="quiz-options-row">
+                        <label class="quiz-radio-box"><input type="radio" name="q6" value="turnkey"><span>Под ключ</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q6" value="rough"><span>Черновая</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q6" value="shell"><span>Только коробка</span></label>
+                    </div>
+                </div>
+                <div class="quiz-step" data-step="7">
+                    <h3 class="quiz-question">В какой бюджет планируете уложиться?</h3>
+                    <div class="quiz-options-row">
+                        <label class="quiz-radio-box"><input type="radio" name="q7" value="to_3m"><span>До 3 млн ₽</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q7" value="3_5m"><span>3 – 5 млн ₽</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q7" value="5_8m"><span>5 – 8 млн ₽</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q7" value="over_8m"><span>Более 8 млн ₽</span></label>
+                    </div>
+                </div>
+                <div class="quiz-step" data-step="8">
+                    <h3 class="quiz-question">Когда планируете начать строительство?</h3>
+                    <div class="quiz-options-row">
+                        <label class="quiz-radio-box"><input type="radio" name="q8" value="asap"><span>Как можно скорее</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q8" value="this_year"><span>В этом году</span></label>
+                        <label class="quiz-radio-box"><input type="radio" name="q8" value="next_year"><span>В следующем году</span></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ============ БЛОК О КОМПАНИИ ============ -->
+<section class="about-section" id="about">
+    <div class="container about-grid">
+        <div class="about-text">
+            <span class="section-label">О КОМПАНИИ</span>
+            <h2>МЫ СТРОИМ<br>НАДЕЖНО И КРАСИВО</h2>
+            <p>Мы — прогрессивная строительная компания в Воронеже. Работаем с кирпичом, газоблоком и брусом. Создаем проекты, которые не только радуют глаз, но и служат десятилетиями.</p>
+        </div>
+        <div class="about-stats">
+            <div class="stat-item">
+                <span class="stat-number">17</span>
+                <span class="stat-desc">Лет опыта</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">67+</span>
+                <span class="stat-desc">Специалистов</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1М+</span>
+                <span class="stat-desc">Кв. метров построено</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ БЛОК ЭТАПЫ РАБОТЫ ============ -->
+<section class="process-section" id="process">
+    <div class="process-bg" style="background-image: url('images/process-bg.jpg');"></div>
+    <div class="process-overlay"></div>
+    <div class="container process-container">
+        <div class="process-header">
+            <h2 class="process-main-title">Начать работать<br>с нами просто</h2>
+        </div>
+        <div class="process-timeline">
+            <div class="process-step"><div class="step-number">1</div><div class="step-content"><h3>Свяжитесь с нами</h3><p>Для уточнения деталей</p><button class="btn-process open-modal">Получить консультацию</button></div></div>
+            <div class="process-step"><div class="step-number">2</div><div class="step-content"><h3>Встреча с нашим сотрудником</h3><p>Ознакомительная встреча на объекте или в нашем офисе</p></div></div>
+            <div class="process-step"><div class="step-number">3</div><div class="step-content"><h3>Этап проектирования</h3><p>Мы предоставим услугу проектирование домов (пропускаем при наличии проекта)</p></div></div>
+            <div class="process-step"><div class="step-number">4</div><div class="step-content"><h3>Готовим документы в банк</h3><p>Оказываем содействие по подготовке пакета документов для ипотечного кредитования</p></div></div>
+            <div class="process-step"><div class="step-number">5</div><div class="step-content"><h3>Заключение договора</h3><p>Договор подряда включает подробный сметный расчет с конечной стоимостью работ</p></div></div>
+            <div class="process-step"><div class="step-number">6</div><div class="step-content"><h3>Выполнение работ</h3><p>Работы выполняются и оплачиваются поэтапно</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ БЛОК ПРОЕКТЫ (СЛАЙДЕР) ============ -->
+<section class="projects-section" id="projects">
+    <div class="container">
+        <div class="section-header-modern">
+            <h2>НАШИ ПРОЕКТЫ</h2>
+        </div>
+        
+        <div class="projects-slider-wrapper">
+            <button class="project-arrow prev" id="projectPrev">←</button>
+            
+            <div class="projects-track" id="projectsTrack">
+                <div class="project-card">
+                    <div class="project-image"><img src="images/project1.jpg" alt="Проект Скайлайт"></div>
+                    <div class="project-info">
+                        <h3>Скайлайт</h3>
+                        <span class="project-area">182.2 м²</span>
+                        <button class="btn-more open-modal">Смотреть проект ↗</button>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><img src="images/project2.jpg" alt="Проект Квантум"></div>
+                    <div class="project-info">
+                        <h3>Квантум</h3>
+                        <span class="project-area">92.99 м²</span>
+                        <button class="btn-more open-modal">Смотреть проект ↗</button>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><img src="images/project3.jpg" alt="Проект Солярис"></div>
+                    <div class="project-info">
+                        <h3>Солярис</h3>
+                        <span class="project-area">140.54 м²</span>
+                        <button class="btn-more open-modal">Смотреть проект ↗</button>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><img src="images/hero-house.jpg" alt="Проект Модерн"></div>
+                    <div class="project-info">
+                        <h3>Модерн</h3>
+                        <span class="project-area">210 м²</span>
+                        <button class="btn-more open-modal">Смотреть проект ↗</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="project-arrow next" id="projectNext">→</button>
+        </div>
+    </div>
+</section>
+
+<!-- ============ БЛОК ОТЗЫВЫ ============ -->
+<section class="reviews-section" id="reviews">
+    <div class="reviews-bg" style="background-image: url('images/reviews-bg.jpg');"></div>
+    <div class="reviews-overlay"></div>
+    
+    <div class="container reviews-container">
+        <div class="section-header-modern" style="border-bottom-color: rgba(255,255,255,0.2); color: white; margin-bottom: 40px;">
+            <h2>ОТЗЫВЫ<br>НАШИХ КЛИЕНТОВ</h2>
+        </div>
+
+        <div class="reviews-slider-wrapper">
+            <button class="review-arrow prev" id="reviewPrev">←</button>
+
+            <div class="reviews-track" id="reviewsTrack">
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Построили дом за 4 месяца. Очень довольны качеством работы и отношением к клиенту. Все четко по договору, без скрытых платежей.</p><div class="review-author">Алексей Иванов</div><div class="review-house">Дом 120 м², кирпич</div></div>
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Спасибо за профессионализм! Помогли с проектом, подобрали материалы. Стройка шла по графику, мы приезжали и видели прогресс каждую неделю.</p><div class="review-author">Елена Смирнова</div><div class="review-house">Дом 150 м², газоблок</div></div>
+                <div class="review-card"><div class="review-stars">★★★★☆</div><p class="review-text">Хорошая компания. Немного затянули с кровлей из-за погоды, но в целом все отлично. Дом теплый, зимой топим мало.</p><div class="review-author">Дмитрий К.</div><div class="review-house">Дом 90 м², брус</div></div>
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Заказывали дом под ключ. Ребята взяли на себя всё: от фундамента до отделки. Результат превзошел ожидания. Рекомендую!</p><div class="review-author">Мария и Сергей</div><div class="review-house">Дом 180 м², кирпич</div></div>
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Очень удобно, что есть свой архитектор. Нам сделали проект с учетом наших пожеланий и бюджета. Строили быстро.</p><div class="review-author">Ольга Петрова</div><div class="review-house">Дом 110 м², газоблок</div></div>
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Работали с «Домовым» по ипотеке. Помогли собрать документы для банка, все прошло гладко. Дом сдали вовремя.</p><div class="review-author">Игорь Волков</div><div class="review-house">Дом 140 м², кирпич</div></div>
+
+                <div class="review-card"><div class="review-stars">★★★★☆</div><p class="review-text">Качество хорошее, но хотелось бы больше внимания к деталям на этапе отделки. В целом домом довольны, живем уже год.</p><div class="review-author">Анна С.</div><div class="review-house">Дом 100 м², брус</div></div>
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Отличная бригада! Работали чисто, мусор вывозили. Соседи тоже заинтересовались. Спасибо за дом!</p><div class="review-author">Николай Ф.</div><div class="review-house">Дом 95 м², каркас</div></div>
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Понравился подход: сначала все рассчитали, показали смету, потом начали. Никаких сюрпризов в процессе. Молодцы.</p><div class="review-author">Татьяна М.</div><div class="review-house">Дом 160 м², газоблок</div></div>
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Дом построили за 3.5 месяца. Для нас это был рекорд. Очень довольны, что выбрали именно эту компанию.</p><div class="review-author">Владимир и Оксана</div><div class="review-house">Дом 130 м², кирпич</div></div>
+                <div class="review-card"><div class="review-stars">★★★★☆</div><p class="review-text">Хорошая компания, но цены чуть выше средних по рынку. Зато качество и сроки на высоте. Оно того стоит.</p><div class="review-author">Роман К.</div><div class="review-house">Дом 120 м², брус</div></div>
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Просто супер! Всем рекомендую. Особенно понравилось, что можно было приехать на объект в любое время и посмотреть.</p><div class="review-author">Светлана В.</div><div class="review-house">Дом 105 м², газоблок</div></div>
+            </div>
+
+            <button class="review-arrow next" id="reviewNext">→</button>
+        </div>
+    </div>
+</section>
+
+<!-- ============ ПОДВАЛ ============ -->
+<footer id="contacts" class="footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <img src="images/logo.png" alt="Домовой" class="logo-img" style="height: 60px; filter: brightness(0) invert(1);">
+            <p>Фундамент вашего спокойствия.</p>
+            <a href="privacy.html" class="privacy-link" target="_blank">Политика конфиденциальности</a>
+        </div>
+        <div class="footer-contacts">
+            <a href="tel:+79204208262" class="footer-phone">+7 (920) 420-82-62</a>
+            <a href="mailto:info@domovoy.ru">info@domovoy.ru</a>
+            <p>г. Воронеж, ул. Примерная, д. 1</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ============ МОДАЛЬНОЕ ОКНО ============ -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-header">
+            <h3>Заказать звонок</h3>
+            <p>Оставьте свои данные, и мы перезвоним вам в течение 15 минут!</p>
+        </div>
+        <form action="#" class="modal-form">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="tel" placeholder="Телефон" required>
+            <button type="submit" class="btn-submit">Отправить заявку</button>
+            <label class="checkbox-label">
+                <input type="checkbox" required checked>
+                <span>Я даю согласие на обработку персональных данных</span>
+            </label>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
