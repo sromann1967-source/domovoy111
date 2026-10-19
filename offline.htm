@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт временно недоступен — Домовой</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #111111; /* Темный фон, чтобы не пугать */
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+            text-align: center;
+        }
+        .offline-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 12px;
+            max-width: 400px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        p {
+            color: #aaaaaa;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        .btn-phone {
+            background-color: #FF8C42;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(255, 140, 66, 0.4);
+        }
+        .btn-phone:hover {
+            background-color: #E5762E;
+        }
+        .btn-tg {
+            background-color: #1E5B8C;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(30, 91, 140, 0.4);
+        }
+        .btn-tg:hover {
+            background-color: #15456B;
+        }
+        .logo {
+            height: 60px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-card">
+        <!-- Если у вас есть логотип, можете раскомментировать -->
+        <!-- <img src="images/logo.png" alt="Домовой" class="logo"> -->
+        
+        <h1>Нет соединения</h1>
+        <p>Похоже, у вас пропал интернет или наш сайт временно недоступен. Но мы на связи!</p>
+        
+        <a href="tel:+79204208262" class="btn btn-phone">📞 Позвонить нам</a>
+        <a href="https://t.me/pra_dead" class="btn btn-tg">✈️ Написать в Telegram</a>
+        
+        <p style="font-size: 12px; margin-top: 20px; margin-bottom: 0;">Ежедневно с 09:00 до 18:00</p>
+    </div>
+</body>
+</html>
