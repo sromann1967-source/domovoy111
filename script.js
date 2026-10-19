@@ -171,3 +171,14 @@ document.addEventListener('DOMContentLoaded', () => {
     track.addEventListener('scroll', updateButtons);
     updateButtons();
 });
+
+// ============ РЕГИСТРАЦИЯ SERVICE WORKER (ОФЛАЙН-СТРАНИЦА) ============
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').then(registration => {
+            console.log('ServiceWorker успешно зарегистрирован. Область: ', registration.scope);
+        }).catch(err => {
+            console.log('Ошибка регистрации ServiceWorker: ', err);
+        });
+    });
+}
