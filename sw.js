@@ -1,27 +1,32 @@
-// Название кеша (если обновите офлайн-страницу, поменяйте v1 на v2)
 const CACHE_NAME = 'domovoy-offline-v1';
 const OFFLINE_URL = 'offline.html';
 
-// Устанавливаем Service Worker и сохраняем офлайн-страницу в память браузера
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
-            // Добавляем нашу офлайн-страницу в кеш
-            return cache.addAll([OFFLINE_URL]);
+            // Пытаемся добавить файл, но если его нет - не ломаем установку
+            return cache.add(OFFLINE_URL).catch(err => {
+                console.warn('Не удалось закешировать offline.html:', err);
+            });
         })
     );
-    // Активируем сразу, не дожидаясь закрытия вкладок
     self.skipWaiting();
 });
 
-// Перехватываем все запросы
 self.addEventListener('fetch', (event) => {
-    // Если пользователь пытается загрузить страницу (HTML)
     if (event.request.mode === 'navigate') {
         event.respondWith(
             fetch(event.request).catch(() => {
-                // Если сеть недоступна, показываем сохраненную офлайн-страницу
-                return caches.match(OFFLINE_URL);
+                // Показываем офлайн-страницу, если она есть в кеше
+                return caches.match(OFFLINE_URL).then(response => {
+                    if (response) {
+                        return response;
+                    }
+                    // Если страницы нет, показываем простой текст
+                    return new Response('Нет соединения. Позвоните нам: +7 (920) 420-82-62', {
+                        headers: { 'Content-Type': 'text/plain; charset=utf-8' }
+                    });
+                });
             })
         );
     }
